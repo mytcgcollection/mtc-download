@@ -8,66 +8,75 @@
 <style>
 :root {
   --accent: #22c55e;
-  --bg1: #020617;
-  --bg2: #0f172a;
+  --text-main: #020617;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, var(--bg2), var(--bg1));
-  color: #fff;
-  min-height: 100vh;
+  background: #ffffff;
+  color: var(--text-main);
 }
 
 .wrapper {
-  padding: 28px 20px 60px;
   max-width: 440px;
   margin: auto;
+  padding: 28px 18px 60px;
 }
 
 .card {
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(18px);
+  background: var(--card-bg);
   border-radius: 22px;
-  padding: 32px 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+  padding: 32px 22px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border: 1px solid var(--border);
 }
 
+/* LOGO */
 .logo {
   width: 96px;
   height: 96px;
-  border-radius: 24px;
+  border-radius: 22px;
   display: block;
   margin: 0 auto 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  background: #f8fafc;
+  padding: 10px;
+  border: 1px solid var(--border);
 }
 
+/* TEXT */
 h1 {
-  text-align: center;
   margin: 0;
+  text-align: center;
   font-size: 26px;
   font-weight: 700;
 }
 
 .tagline {
   text-align: center;
-  color: #cbd5f5;
   font-size: 15px;
+  color: var(--text-muted);
   margin: 10px 0 24px;
 }
 
+/* FEATURES */
 .features {
   font-size: 14px;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 .features div {
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 .features span {
@@ -75,13 +84,20 @@ h1 {
   font-weight: bold;
 }
 
+/* PLAY STORE */
 .play {
   text-align: center;
-  margin: 22px 0 28px;
+  margin-bottom: 28px;
+}
+
+.play .label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
 }
 
 .play img {
-  height: 56px;
+  height: 64px;
   transition: transform 0.15s ease;
 }
 
@@ -89,12 +105,18 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Screenshot carousel */
+/* SCREENSHOTS */
+.preview-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
 .carousel {
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   scroll-snap-type: x mandatory;
 }
 
@@ -102,22 +124,24 @@ h1 {
   height: 300px;
   border-radius: 16px;
   scroll-snap-align: start;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 .carousel::-webkit-scrollbar {
   height: 6px;
 }
 .carousel::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #cbd5e1;
   border-radius: 10px;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
-  margin-top: 24px;
   font-size: 12px;
   color: #94a3b8;
+  margin-top: 26px;
 }
 </style>
 </head>
@@ -134,6 +158,7 @@ h1 {
       India’s first TCG collection & trading app
     </div>
 
+    <!-- FEATURES -->
     <div class="features">
       <div><span>✓</span> Track your card collection</div>
       <div><span>✓</span> ISO & WTS listings</div>
@@ -143,19 +168,21 @@ h1 {
 
     <!-- PLAY STORE -->
     <div class="play">
+      <div class="label">Available on</div>
       <a href="https://play.google.com/store/apps/details?id=com.bharatgurung.mytcgcollection" target="_blank">
         <img src="assets/Google-Play_logo.png" alt="Get it on Google Play">
       </a>
     </div>
 
     <!-- SCREENSHOTS -->
+    <div class="preview-label">App preview → swipe</div>
     <div class="carousel">
-      <img src="assets/MockupArtboard-1.png">
-      <img src="assets/MockupArtboard-2.png">
-      <img src="assets/MockupArtboard-3.png">
-      <img src="assets/MockupArtboard-4.png">
-      <img src="assets/MockupArtboard-5.png">
-      <img src="assets/MockupArtboard-6.png">
+      <img src="assets/MockupArtboard-1.png" alt="">
+      <img src="assets/MockupArtboard-2.png" alt="">
+      <img src="assets/MockupArtboard-3.png" alt="">
+      <img src="assets/MockupArtboard-4.png" alt="">
+      <img src="assets/MockupArtboard-5.png" alt="">
+      <img src="assets/MockupArtboard-6.png" alt="">
     </div>
 
     <div class="footer">
