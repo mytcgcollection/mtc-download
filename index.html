@@ -12,9 +12,7 @@
   --bg2: #0f172a;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -22,59 +20,54 @@ body {
   background: radial-gradient(circle at top, var(--bg2), var(--bg1));
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .wrapper {
-  width: 100%;
-  padding: 24px;
+  padding: 28px 20px 60px;
+  max-width: 440px;
+  margin: auto;
 }
 
 .card {
-  max-width: 420px;
-  margin: auto;
-  padding: 32px 26px;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.78);
   backdrop-filter: blur(18px);
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  border-radius: 22px;
+  padding: 32px 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
 }
 
 .logo {
-  width: 92px;
-  height: 92px;
-  border-radius: 22px;
-  margin-bottom: 18px;
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  display: block;
+  margin: 0 auto 16px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 h1 {
-  font-size: 26px;
+  text-align: center;
   margin: 0;
+  font-size: 26px;
   font-weight: 700;
 }
 
 .tagline {
+  text-align: center;
   color: #cbd5f5;
   font-size: 15px;
-  margin: 10px 0 22px;
+  margin: 10px 0 24px;
 }
 
 .features {
-  text-align: left;
-  margin-bottom: 24px;
+  font-size: 14px;
+  margin-bottom: 22px;
 }
 
 .features div {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin: 10px 0;
-  color: #e5e7eb;
-  font-size: 14px;
+  margin: 8px 0;
 }
 
 .features span {
@@ -82,22 +75,47 @@ h1 {
   font-weight: bold;
 }
 
-.download {
-  display: inline-block;
-  margin-top: 10px;
+.play {
+  text-align: center;
+  margin: 22px 0 28px;
 }
 
-.download img {
+.play img {
   height: 56px;
   transition: transform 0.15s ease;
 }
 
-.download img:hover {
+.play img:hover {
   transform: scale(1.05);
 }
 
+/* Screenshot carousel */
+.carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel img {
+  height: 300px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
 .footer {
-  margin-top: 22px;
+  text-align: center;
+  margin-top: 24px;
   font-size: 12px;
   color: #94a3b8;
 }
@@ -108,10 +126,8 @@ h1 {
 <div class="wrapper">
   <div class="card">
 
-    <!-- APP ICON -->
-    <img class="logo"
-         src="https://play-lh.googleusercontent.com/PLACE_YOUR_ICON_HERE"
-         alt="MY TCG COLLECTION">
+    <!-- LOGO -->
+    <img src="assets/MTC_LOGO.png" class="logo" alt="MY TCG COLLECTION">
 
     <h1>MY TCG COLLECTION</h1>
     <div class="tagline">
@@ -120,19 +136,27 @@ h1 {
 
     <div class="features">
       <div><span>✓</span> Track your card collection</div>
+      <div><span>✓</span> ISO & WTS listings</div>
       <div><span>✓</span> Discover card values</div>
       <div><span>✓</span> Trade with Indian collectors</div>
-      <div><span>✓</span> ISO & WTS listings</div>
     </div>
 
-    <!-- PLAY STORE BADGE -->
-    <a class="download"
-       href="https://play.google.com/store/apps/details?id=com.bharatgurung.mytcgcollection"
-       target="_blank">
-      <img
-        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-        alt="Get it on Google Play">
-    </a>
+    <!-- PLAY STORE -->
+    <div class="play">
+      <a href="https://play.google.com/store/apps/details?id=com.bharatgurung.mytcgcollection" target="_blank">
+        <img src="assets/Google-Play_logo.png" alt="Get it on Google Play">
+      </a>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <div class="carousel">
+      <img src="assets/MockupArtboard-1.png">
+      <img src="assets/MockupArtboard-2.png">
+      <img src="assets/MockupArtboard-3.png">
+      <img src="assets/MockupArtboard-4.png">
+      <img src="assets/MockupArtboard-5.png">
+      <img src="assets/MockupArtboard-6.png">
+    </div>
 
     <div class="footer">
       © 2026 MY TCG COLLECTION
