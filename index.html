@@ -14,9 +14,7 @@
   --border: #e5e7eb;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -84,7 +82,7 @@ h1 {
   font-weight: bold;
 }
 
-/* PLAY STORE */
+/* PLAY STORE CTA */
 .play {
   text-align: center;
   margin-bottom: 28px;
@@ -96,13 +94,33 @@ h1 {
   margin-bottom: 8px;
 }
 
-.play img {
-  height: 64px;
-  transition: transform 0.15s ease;
+/* CTA ANIMATION MAGIC */
+.play a {
+  display: inline-block;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
 }
 
-.play img:hover {
-  transform: scale(1.05);
+.play a::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 16px;
+  background: rgba(34, 197, 94, 0.15);
+  filter: blur(12px);
+  opacity: 0;
+  animation: pulse 2.8s infinite;
+  z-index: -1;
+}
+
+.play img {
+  height: 64px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play a:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(34,197,94,0.35);
 }
 
 /* SCREENSHOTS */
@@ -143,6 +161,18 @@ h1 {
   color: #94a3b8;
   margin-top: 26px;
 }
+
+/* ANIMATIONS */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0; transform: scale(0.95); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.15); }
+}
 </style>
 </head>
 
@@ -150,7 +180,6 @@ h1 {
 <div class="wrapper">
   <div class="card">
 
-    <!-- LOGO -->
     <img src="assets/MTC_LOGO.png" class="logo" alt="MY TCG COLLECTION">
 
     <h1>MY TCG COLLECTION</h1>
@@ -158,7 +187,6 @@ h1 {
       India’s first TCG collection & trading app
     </div>
 
-    <!-- FEATURES -->
     <div class="features">
       <div><span>✓</span> Track your card collection</div>
       <div><span>✓</span> ISO & WTS listings</div>
@@ -166,23 +194,22 @@ h1 {
       <div><span>✓</span> Trade with Indian collectors</div>
     </div>
 
-    <!-- PLAY STORE -->
+    <!-- ANIMATED PLAY STORE CTA -->
     <div class="play">
-      <div class="label">Available on</div>
+      <div class="label">Download now</div>
       <a href="https://play.google.com/store/apps/details?id=com.bharatgurung.mytcgcollection" target="_blank">
         <img src="assets/Google-Play_logo.png" alt="Get it on Google Play">
       </a>
     </div>
 
-    <!-- SCREENSHOTS -->
     <div class="preview-label">App preview → swipe</div>
     <div class="carousel">
-      <img src="assets/MockupArtboard-1.png" alt="">
-      <img src="assets/MockupArtboard-2.png" alt="">
-      <img src="assets/MockupArtboard-3.png" alt="">
-      <img src="assets/MockupArtboard-4.png" alt="">
-      <img src="assets/MockupArtboard-5.png" alt="">
-      <img src="assets/MockupArtboard-6.png" alt="">
+      <img src="assets/MockupArtboard-1.png">
+      <img src="assets/MockupArtboard-2.png">
+      <img src="assets/MockupArtboard-3.png">
+      <img src="assets/MockupArtboard-4.png">
+      <img src="assets/MockupArtboard-5.png">
+      <img src="assets/MockupArtboard-6.png">
     </div>
 
     <div class="footer">
